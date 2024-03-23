@@ -16,10 +16,9 @@ class BaseModel:
         """
         if kwargs:
             del kwargs['__class__']
-            created = datetime.strptime(kwargs['created_at'], "%Y-%m-%dT%H:%M:%S.%f")
-            self.created_at = created
-            updated = datetime.strptime(kwargs['updated_at'], "%Y-%m-%dT%H:%M:%S.%f")
-            self.updated_at = updated
+            string = "%Y-%m-%dT%H:%M:%S.%f"
+            self.created_at = datetime.strptime(kwargs['created_at'], string)
+            self.updated_at = datetime.strptime(kwargs['updated_at'], string)
             self.id = kwargs['id']
         else:
             self.id = str(uuid.uuid4())
