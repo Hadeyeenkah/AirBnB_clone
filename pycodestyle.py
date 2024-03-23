@@ -4,7 +4,7 @@ from sys import argv, stderr
 
 
 def calculator(argv):
-    """Calcuaator 
+    """Calculator function""" 
     result = 0
     if len(argv) != 4:
         print("Usage: number1 operator number2", file=stderr)
