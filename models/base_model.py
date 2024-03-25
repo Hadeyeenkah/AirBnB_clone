@@ -48,8 +48,8 @@ class BaseModel:
         Returns:
             return dictionary represenation of the class
         """
-        attr_dictionary = self.__dict__
+        attr_dictionary = self.__dict__.copy()
         attr_dictionary['__class__'] = self.__class__.__name__
-        attr_dictionary['created_at'] = self.created_at.isoformat("T", "auto")
-        attr_dictionary['updated_at'] = self.updated_at.isoformat("T", "auto")
+        attr_dictionary['created_at'] = self.created_at.isoformat()
+        attr_dictionary['updated_at'] = self.updated_at.isoformat()
         return attr_dictionary
