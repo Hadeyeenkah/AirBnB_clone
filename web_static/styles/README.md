@@ -1,1 +1,1 @@
-All CSS styles associated with the web static project
+0x01. AirBnB clone - Web static

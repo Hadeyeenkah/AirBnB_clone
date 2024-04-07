@@ -75,3 +75,68 @@
     margin-top: 20px;
     text-align: left;
 }
+
+.places .amenities{
+    margin-top: 40px;
+    text-align: left;
+}
+
+.places .amenities h2{
+    display: block;
+    font-size: 16px;
+    border-bottom: 1px solid #DDDDDD;
+    margin-left: 0;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+}
+
+.places .reviews{
+    margin-top: 40px;
+    text-align: left;
+}
+
+.places .reviews h2{
+    display: block;
+    font-size: 16px;
+    border-bottom: 1px solid #DDDDDD;
+    margin-left: 0;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+}
+
+.places .reviews h3{
+    font-size: 14px;
+}
+
+.places .reviews p{
+    font-size: 12px;
+}
+.places .reviews ul{
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+
+.places .amenities ul{
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+.tv, .wifi, .pet_friendly{
+    padding-top: 20px;
+    padding-left: 80px;
+    height:40px;
+    width: 100%;
+}
+.pet_friendly{
+    background: url(../images/icon_pets.png) left 1px;
+    background-repeat: no-repeat;
+}
+.wifi{
+    background: url(../images/icon_wifi.png) left 1px;
+    background-repeat: no-repeat;
+}
+.tv{
+    background: url(../images/icon_tv.png) left 5px;
+    background-repeat: no-repeat;
+}
