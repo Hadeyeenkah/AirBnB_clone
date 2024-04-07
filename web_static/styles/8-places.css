@@ -81,19 +81,19 @@
     align-items: center;
 }
 
-.icon_guest {
+.guest_icon {
     background-image: url('../images/icon_group.png');
     width: 50px;
     height: 90px;
 }
 
-.icon_bed {
+.room_icon {
     background-image: url('../images/icon_bed.png');
     width: 50px;
     height: 90px;
 }
 
-.icon_bath {
+.bath_icon {
     background-image: url('../images/icon_bath.png');
     width: 50px;
     height: 90px;
