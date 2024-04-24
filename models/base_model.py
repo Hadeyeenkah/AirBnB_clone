@@ -50,6 +50,6 @@ class BaseModel:
         """
         attr_dictionary = self.__dict__.copy()
         attr_dictionary['__class__'] = self.__class__.__name__
-        attr_dictionary['created_at'] = self.created_at.isoformat()
-        attr_dictionary['updated_at'] = self.updated_at.isoformat()
+        attr_dictionary['created_at'] = attr_dictionary['created_at'].isoformat()
+        attr_dictionary['updated_at'] = attr_dictionary['updated_at'].isoformat()
         return attr_dictionary
