@@ -21,16 +21,19 @@ class FileStorage:
         Args:
             obj (instance): instance of the class created
         """
-        dictionary = obj.to_dict()
-        if dictionary['__class__'] == 'BaseModel':
-            key = f"BaseModel.{dictionary['id']}"
-            FileStorage.__objects[key] = dictionary
+        if obj:
+            keys = f'{obj.__class__.__name__}.{str(obj.id)}'
+            FileStorage.__objects[keys] = obj
 
     def save(self):
         """Serializes __objects to the JSON file
         """
+        dictionary = {}
+        for key, value in FileStorage.__objects.items():
+            dictionary[key] = value.to_dict()
+
         with open(FileStorage.__file_path, "w") as writting:
-            json.dump(FileStorage.__objects, writting)
+            json.dump(dictionary, writting)
 
     def reload(self):
         """deserializes the JSON file to __objects only if the JSON file exists
@@ -38,6 +41,11 @@ class FileStorage:
         """
         try:
             with open(FileStorage.__file_path, "r") as reading:
-                FileStorage.__objects = json.load(reading)
-        except:
+                dictionary = reading.read()
+            objects_dict = json.loads(dictionary)
+            for obj in objects_dict.values():
+                from models.base_model import BaseModel
+                name_class = obj['__class__']
+                self.new(eval(name_class)(**obj))
+        except FileNotFoundError:
             pass
